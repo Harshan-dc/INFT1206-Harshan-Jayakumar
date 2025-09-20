@@ -2,51 +2,82 @@
 Name: Harshan Jayakumar
 File: index.html
 Date: 19 September 2025
+
+Description: Homepage for a birdwatching website using semantic HTML structure. 
+Includes header, navigation, main content with article and aside, footer, and linked images.
+
+INFT1206 – Web Development Fundamentals
+-->
+
+<!--
+Name: Harshan Jayakumar
+File: index.html
+Date: 19 September 2025
+Description: Homepage for a birdwatching website using semantic HTML structure. Includes header, navigation, main content with article and aside, footer, and linked images.
 INFT1206 – Web Development Fundamentals
 -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="utf-8" />
     <title>Birdwatching</title>
     <link
       href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300%7CCinzel+Decorative:700"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <h1>Birdwatching</h1>
+    <header>
+      <h1>
+        Birdwatching
+        <img src="dove.png" alt="Site logo of a dove" />
+      </h1>
 
-    Home Get started Photos Gear Forum
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Get started</a></li>
+          <li><a href="#">Photos</a></li>
+          <li><a href="#">Gear</a></li>
+          <li><a href="#">Forum</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <h2>Welcome</h2>
+    <main>
+      <article>
+        <h2>Welcome</h2>
+        <p>
+          Welcome to our beginner-friendly birdwatching site! Whether you are
+          just starting out or an experienced birdwatcher, you will find tips,
+          guides, and community insights to enhance your birding adventures.
+        </p>
 
-    <p>
-      Welcome to our fake birdwatching site. If this were a real site, it
-      would be the ideal place to come to learn more about birdwatching,
-      whether you are a beginner looking to learn how to get into birding, or
-      an expert wanting to share ideas, tips, and photos with other
-      like-minded people.
-    </p>
+        <p>
+          Don't wait — grab your binoculars, head outside, and start observing
+          the amazing world of birds around you!
+        </p>
+      </article>
 
-    <p>
-      So don't waste time! Get what you need, then turn off that computer and
-      get out into the great outdoors!
-    </p>
+      <aside>
+        <h2>Favorite Photos</h2>
+        <a href="favorite-bird-1.jpg"><img src="favorite-bird-1_th.jpg" alt="Red cardinal perched on a tree" /></a>
+        <a href="favorite-bird-2.jpg"><img src="favorite-bird-2_th.jpg" alt="Blue jay in flight" /></a>
+        <a href="favorite-bird-3.jpg"><img src="favorite-bird-3_th.jpg" alt="Yellow finch on a branch" /></a>
+        <a href="favorite-bird-4.jpg"><img src="favorite-bird-4_th.jpg" alt="Sparrow feeding on seeds" /></a>
+      </aside>
+    </main>
 
-    <h2>Favorite photos</h2>
-
-    <!-- Link images here. -->
-
-    <p>
-      This fake website example is CC0 — any part of this code may be reused
-      in any way you wish. Original example written by Chris Mills, 2016.
-    </p>
-
-    <p>
-      <a href="http://game-icons.net/lorc/originals/dove.html">Dove icon</a>
-      by Lorc.
-    </p>
+    <footer>
+      <p>
+        &copy; 2025 Birdwatching Community. This site example is reusable
+        under CC0. Original template inspired by Chris Mills, 2016.
+      </p>
+      <p>
+        <a href="http://game-icons.net/lorc/originals/dove.html">Dove icon</a> by Lorc.
+      </p>
+    </footer>
   </body>
 </html>
