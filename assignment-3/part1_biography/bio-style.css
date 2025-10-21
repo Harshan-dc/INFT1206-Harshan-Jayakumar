@@ -5,3 +5,11 @@ Date: 18 October 2025
 CSS styles for Harshan's biography page.
 INFT1206 – Web Development Fundamentals
 */
+
+html {
+  background-color: white;
+}
+
+body {
+  font: 1.2em / 1.5 system-ui;
+}
