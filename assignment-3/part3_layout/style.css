@@ -8,6 +8,7 @@ and a two-column photo grid for the sidebar.
 INFT1206 – Web Development Fundamentals
 */
 
+/* General setup */
 * {
   box-sizing: border-box;
 }
@@ -25,6 +26,7 @@ img {
   border: 1px solid black;
 }
 
+/* Logo */
 .logo {
   font-size: 200%;
   padding: 50px 20px;
@@ -32,20 +34,29 @@ img {
   max-width: 980px;
 }
 
+/* Grid layout: article + aside */
 .grid {
   margin: 0 auto;
   max-width: 980px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
 }
 
+/* Navigation */
 nav {
   background-color: black;
   padding: 0.5em;
+  position: sticky;
+  top: 0;
 }
 
 nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  justify-content: space-around;
 }
 
 nav a {
@@ -54,12 +65,19 @@ nav a {
   padding: 0.5em 1em;
 }
 
+/* Feature image with text wrap */
+.feature {
+  width: 200px;
+  float: left;
+  margin: 8px 30px 20px 0;
+}
+
+/* Photography sidebar */
 .photos {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.feature {
-  width: 200px;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 1fr 1fr;
 }
