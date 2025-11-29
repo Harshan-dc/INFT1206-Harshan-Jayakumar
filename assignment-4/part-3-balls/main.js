@@ -1,3 +1,8 @@
+// Name: Harshan Jayakumar
+// File: main.js
+// Date: 27 November 2025
+// JavaScript file for bouncing balls (Assignment 4 – Part 3).
+
 // setup canvas
 
 const canvas = document.querySelector("canvas");
