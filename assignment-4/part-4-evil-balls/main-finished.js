@@ -1,3 +1,6 @@
+// INFT1206 – Assignment 4 Part 4
+// Bouncing balls with Shape / Ball / EvilCircle and a ball counter.
+
 // set up canvas
 
 const canvas = document.querySelector("canvas");
