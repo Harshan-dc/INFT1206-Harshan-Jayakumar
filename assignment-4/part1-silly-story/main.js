@@ -7,54 +7,87 @@ optionally swaps name and converts between US / UK units.
 INFT1206 – Web Development Fundamentals
 */
 
-// Complete variable definitions and random functions
-
+// ----------------------------------------------------
+// DOM references
+// ----------------------------------------------------
 const customName = document.getElementById("custom-name");
 const generateBtn = document.querySelector(".generate");
 const story = document.querySelector(".story");
 
+// ----------------------------------------------------
+// Utility function: pick a random element from an array
+// ----------------------------------------------------
 function randomValueFromArray(array) {
-  const random = Math.floor(Math.random() * array.length);
-  return array[random];
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
 }
 
-// Raw text strings
+// ----------------------------------------------------
+// Raw text data for the story
+// ----------------------------------------------------
+const characters = [
+  "Willy the Goblin",
+  "Big Daddy",
+  "Father Christmas"
+];
 
-// Willy the Goblin
-// Big Daddy
-// Father Christmas
+const places = [
+  "the soup kitchen",
+  "Disneyland",
+  "the White House"
+];
 
-// the soup kitchen
-// Disneyland
-// the White House
+const events = [
+  "spontaneously combusted",
+  "melted into a puddle on the sidewalk",
+  "turned into a slug and slithered away"
+];
 
-// spontaneously combusted
-// melted into a puddle on the sidewalk
-// turned into a slug and slithered away
-
-// Partial return random string function
-
+// ----------------------------------------------------
+// Build and return a fresh random story string
+// ----------------------------------------------------
 function returnRandomStoryString() {
-  // It was 94 Fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.
+  const randomCharacter = randomValueFromArray(characters);
+  const randomPlace = randomValueFromArray(places);
+  const randomEvent = randomValueFromArray(events);
+
+  // Base US version of the story: 94 Fahrenheit, 300 pounds, Bob
+  const storyText = `It was 94 Fahrenheit outside, so ${randomCharacter} went for a walk. When they got to ${randomPlace}, they stared in horror for a few moments, then ${randomEvent}. Bob saw the whole thing, but was not surprised — ${randomCharacter} weighs 300 pounds, and it was a hot day.`;
 
   return storyText;
 }
 
-// Event listener and partial generate function definition
-
+// ----------------------------------------------------
+// Event wiring: click button -> generate a new story
+// ----------------------------------------------------
 generateBtn.addEventListener("click", generateStory);
 
+// ----------------------------------------------------
+// Main handler: build, customize, and display the story
+// ----------------------------------------------------
 function generateStory() {
+  // 1. Start from a brand new random base story
+  let newStory = returnRandomStoryString();
+
+  // 2. If the user typed a custom name, replace "Bob"
   if (customName.value !== "") {
     const name = customName.value;
+    newStory = newStory.replace("Bob", name);
   }
 
+  // 3. If UK is selected, convert units
   if (document.getElementById("uk").checked) {
-    const weight = Math.round(300);
-    const temperature = Math.round(94);
+    // 300 pounds -> stones (1 stone ≈ 14 pounds)
+    const convertedWeight = `${Math.round(300 / 14)} stone`;
+
+    // 94 Fahrenheit -> Celsius (C = (F - 32) * 5 / 9)
+    const convertedTemp = `${Math.round((94 - 32) * (5 / 9))} Celsius`;
+
+    newStory = newStory.replace("300 pounds", convertedWeight);
+    newStory = newStory.replace("94 Fahrenheit", convertedTemp);
   }
 
-  // TODO: replace "" with the correct expression
-  story.textContent = "";
+  // 4. Output the final story and reveal the box
+  story.textContent = newStory;
   story.style.visibility = "visible";
 }
