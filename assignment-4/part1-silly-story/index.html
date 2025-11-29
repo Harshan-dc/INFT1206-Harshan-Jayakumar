@@ -5,6 +5,7 @@
     <title>Silly Story Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <!--
 Name: Harshan Jayakumar
 File: index.html
@@ -13,19 +14,41 @@ A simple JavaScript silly story generator for Assignment 4 – Part 1.
 INFT1206 – Web Development Fundamentals
 -->
 
-<div>
-  <label for="custom-name">Enter custom name:</label>
-  <input id="custom-name" type="text" placeholder="" />
-</div>
-<fieldset>
-  <legend>Choose locale:</legend>
-  <label for="us">US</label
-  ><input id="us" type="radio" name="uk-us" value="us" checked />
-  <label for="uk">UK</label
-  ><input id="uk" type="radio" name="uk-us" value="uk" />
-</fieldset>
-<div>
-  <button class="generate">Generate random story</button>
-</div>
-<!-- Thanks a lot to Willy Aguirre for his help with the code for this assessment -->
-<p class="story"></p>
+<body>
+    <h1>Silly Story Generator</h1>
+
+    <section>
+        <p>
+            Enter a custom name (optional), choose your locale, then click the button
+            to generate a random silly story.
+        </p>
+
+        <div class="form-row">
+            <label for="custom-name">Enter custom name:</label>
+            <input id="custom-name" type="text" name="custom-name" />
+        </div>
+
+        <fieldset class="form-row">
+            <legend>Choose locale:</legend>
+
+            <label for="us">
+                <input id="us" type="radio" name="uk-us" value="us" checked>
+                US (Fahrenheit & pounds)
+            </label>
+
+            <label for="uk">
+                <input id="uk" type="radio" name="uk-us" value="uk">
+                UK (Celsius & stones)
+            </label>
+        </fieldset>
+
+        <div class="form-row">
+            <button type="button" class="generate">Generate random story</button>
+        </div>
+    </section>
+
+    <p class="story"></p>
+
+    <script src="main.js"></script>
+</body>
+</html>
