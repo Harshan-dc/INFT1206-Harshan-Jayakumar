@@ -1,3 +1,12 @@
+/*
+Name: Harshan Jayakumar
+File: main.js
+Date: 28 November 2025
+JavaScript for the Silly Story Generator – builds a random story and
+optionally swaps name and converts between US / UK units.
+INFT1206 – Web Development Fundamentals
+*/
+
 // Complete variable definitions and random functions
 
 const customName = document.getElementById("custom-name");
